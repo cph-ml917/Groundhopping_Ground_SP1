@@ -61,13 +61,15 @@ void draw() {
     stroke(255);
     strokeWeight(3);
     ellipse(500, 360, 60, 60);
+    header1(1010, 50);
   } else {
     button1.displayButton();
     seatsOnTheStand();
+    header2(1010, 50);
   }
 
   noStroke();
-  header1(1010, 50);
+  //header1(1010, 50);
 }
 
 void seatsOnTheStand() {
@@ -138,6 +140,16 @@ void header1 (int x, int y) {
   text("← Buy tickets", x, 360, 260, 400);
   fill(hoverColor);
 }
+
+void header2 (int x, int y) {
+  fill(32, 35, 70);
+  textSize(26);
+  //Groundhopping_Ground_SP1
+  text("THE GROUNDHOPPING GROUND", x, y, 260, 400);
+   textAlign(CENTER);
+
+}
+
 
 void mousePressed()
 {
