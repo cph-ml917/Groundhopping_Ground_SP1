@@ -18,13 +18,13 @@ void setup () {
   fill(32, 35, 70);
 
   //The Stand & the Back-Button
-  button1 = new Button(0, 0, 160, 60, color(255), color(hoverColor), "← Back");
+  button1 = new Button(0, 0, 160, 60, color(0, 232, 147), color(hoverColor), "← Back");
   northStand = new Button(250, 50, 500, 160, color(255), color(hoverColor), "The North "+"Stand");
   eastStand = new Button(750, 210, 200, 290, color(255), color(hoverColor), "The East\n"+"Stand");
   southStand = new Button(250, 500, 500, 180, color(255), color(hoverColor), "The South "+"Stand");
   westStand = new Button(50, 210, 200, 290, color(255), color(hoverColor), "The West\n"+"Stand");
 
-  Stadium bestGround = new Stadium(20, 50);
+  Stadium bestGround = new Stadium(14, 20);
 
   // Reserver række 1, sæde 3
   System.out.println("Række 1, sæde 3 er reserveret: " + bestGround.reserve(1, 3));
@@ -51,10 +51,7 @@ void draw() {
     westStand.displayButton();
 
     //The Pitch
-    fill(0, 255, 179);
-    fill(0, 187, 119);
     fill(0, 232, 147);
-    //fill(54, 243, 66);
     rect(260, 220, 480, 270);
 
     //The line markings on the pitch
@@ -82,7 +79,7 @@ void seatsOnTheStand() {
   int mX = -1;
   int mY = -1;
   // Determine mouse on grid.
-  if ( mouseX >= 45 && mouseX < 900 ) {
+  if ( mouseX >= 45 && mouseX < 1000 ) {
     if ( mouseY >= 105 && mouseY < 665 ) {
       mX=(mouseX - 45)/40;
       mY=(mouseY - 105)/40;
@@ -94,7 +91,7 @@ void seatsOnTheStand() {
   // Draw the seats
   pushMatrix();
   translate( 65, 130 );
-  for ( int i = 0; i < 20; i++ ) {
+  for ( int i = 0; i < 22; i++ ) {
     for ( int j = 0; j < 14; j++ ) {
       // grid cell color. Depending on the position of the mouse.
       fill((mX==i&&mY==j)?hoverColor:seatColor);
@@ -118,7 +115,7 @@ void seatsOnTheStand() {
     // Letters.
     text( c, 25, 135 + 40 * i );
   }
-  for ( int i = 0; i < 20; i++ ) {
+  for ( int i = 0; i < 22; i++ ) {
     // Numbers.
     int t = i+1;
     text( "" + t, 65 + 40 * i, 695);
