@@ -127,13 +127,10 @@ void seatsOnTheStand() {
 void header1 (int x, int y) {
   fill(32, 35, 70);
   textSize(26);
-  //Groundhopping_Ground_SP1
   text("THE GROUNDHOPPING GROUND", x, y, 260, 400);
-  //text("WELCOME TO THE NEW STADIUM ", x, y, 260, 400);
-
+  
   textSize(14);
   text("Welcome to our new stadium The Groundhopping Ground. Tickets for next match is on sale now - select a stand and click on it.", x, 160, 260, 400);
-
   textAlign(CENTER);
 
   textSize(26);
@@ -144,7 +141,6 @@ void header1 (int x, int y) {
 void header2 (int x, int y) {
   fill(32, 35, 70);
   textSize(26);
-  //Groundhopping_Ground_SP1
   text("THE GROUNDHOPPING GROUND", x, y, 260, 400);
    textAlign(CENTER);
 
