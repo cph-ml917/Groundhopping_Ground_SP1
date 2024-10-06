@@ -4,14 +4,14 @@ int buttonStatus = 1;
 color colorOne = color(32, 35, 70);
 color seatColor = color(196);
 color hoverColor = color(77, 91, 255);
-color whiteColor = color(255, 255, 255);
+color whiteColor = color(253,253,253);
 
 Overview northStand, eastStand, southStand, westStand, pitch;
 Stand button1;
 
 void setup () {
   size(1280, 720);
-  background(180);
+  background(211,211,211);
 
   // Get the font
   font = createFont("DMSans-Regular.ttf", 30);
@@ -47,7 +47,7 @@ void setup () {
 }
 
 void draw() {
-  background(140);
+  background(169,169,169);
 
   if (buttonStatus == 1) {
     pitch.displayThePitch();
