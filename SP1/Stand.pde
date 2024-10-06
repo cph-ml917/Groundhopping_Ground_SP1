@@ -1,14 +1,14 @@
 
-class Button
+class Stand
 {
   int x, y, w, h;
   color c;
   color hoverButton;
   String txt;
-  int txtSize = 18;
+  int txtSize = 20;
 
   //The Constructor
-  Button (int _x, int _y, int _w, int _h, color _c, color _hoverButton, String _txt)
+  Stand (int _x, int _y, int _w, int _h, color _c, color _hoverButton, String _txt)
   {
     x = _x;
     y = _y;
@@ -24,30 +24,35 @@ class Button
   //Display the button
   void displayButton()
   {
+
     pushStyle();
-    if (mouseOver()) {
+    if (mouseOverButton()) {
       cursor(HAND);
       fill(hoverButton);
     } else {
       cursor(ARROW);
       fill(c);
     }
-    stroke(100);
-    strokeWeight(0);
+
+    noStroke();
+     strokeWeight(0);
     rect(x, y, w, h);
     fill(32, 35, 70);
     textSize(txtSize);
     textAlign(CENTER);
     text(txt, x+w/2, y+h/2+txtSize/2-txtSize/4);
+     noStroke();
+  
     popStyle();
   }
 
   void seatsOnTheStand() {
-    textSize(18);
+    textSize(20);
 
     textAlign(CENTER);
     // Rectangular grid.
     stroke(colorOne);
+    strokeWeight(2.8);
     int mX = -1;
     int mY = -1;
     // Determine mouse on grid.
@@ -62,7 +67,7 @@ class Button
     }
     // Draw the seats
     pushMatrix();
-    translate( 65, 130 );
+    translate( 68, 130 );
     for ( int i = 0; i < 22; i++ ) {
       for ( int j = 0; j < 14; j++ ) {
         // grid cell color. Depending on the position of the mouse.
@@ -74,6 +79,10 @@ class Button
         if ( mX==i && mY==j ) {
           fill(colorOne);
           char c = char( int('A') + j );
+
+          fill(hoverColor);
+          //textSize(20);
+
           text( "" + c + (i+1), 20 + 40 * i, 30 + 40 * j );
         }
       }
@@ -82,6 +91,7 @@ class Button
 
     // Labels on sides
     fill(colorOne);
+     textSize(txtSize);
     for ( int i = 0; i < 14; i++ ) {
       char c = char(int('A') + i);
       // Letters.
@@ -90,7 +100,7 @@ class Button
     for ( int i = 0; i < 22; i++ ) {
       // Numbers.
       int t = i+1;
-      text( "" + t, 65 + 40 * i, 695);
+      text( "" + t, 68 + 40 * i, 695);
     }
   }
 
@@ -126,7 +136,7 @@ class Button
 
 
   //Check if the mouse is on the button
-  boolean mouseOver()
+  boolean mouseOverButton()
   {
     return (mouseX >= x && mouseX <= (x + w) && mouseY >= y && mouseY <= (y + h));
   }

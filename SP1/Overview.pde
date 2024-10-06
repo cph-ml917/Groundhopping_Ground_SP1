@@ -18,71 +18,25 @@ class Overview {
     txt = _txt;
   }
 
-  /*
-  //Display the button
-   void displayButton()
-   {
-   pushStyle();
-   if (mouseOver()) {
-   cursor(HAND);
-   fill(hoverButton);
-   
-   } else {
-   cursor(ARROW);
-   fill(c);
-   
-   }
-   stroke(100);
-   strokeWeight(0);
-   rect(x, y, w, h);
-   fill(32, 35, 70);
-   textSize(txtSize);
-   textAlign(CENTER);
-   text(txt, x+w/2, y+h/2+txtSize/2-txtSize/4);
-   popStyle();
-   }
-   */
-
-  Overview () {
-  }
-
-  void displayThePitch() {
-    //The Pitch
-    fill(0, 232, 147);
-    rect(260, 220, 480, 270);
-
-    //The line markings on the pitch
-    fill(255);
-    rect(498, 220, 4, 270);
-    noFill();
-    stroke(255);
-    strokeWeight(3);
-    ellipse(500, 360, 60, 60);
-    header1(1010, 50);
-  }
-
-  void displayStands()
+ void displayStands()
   {
-   
 
-
-
-
-
-    ///////////
-    pushStyle();
-     if (mouseOver()) {
+    //pushStyle();
+    /*if (mouseOverStand()) {
       cursor(HAND);
     } else {
       cursor(ARROW);
-    }
-    if (mouseOver()) {
+    }*/
 
+   pushStyle();
+      if (mouseOverStand()) {
+      //cursor(HAND);
       fill(hoverButton);
     } else {
-
+      //cursor(ARROW);
       fill(c);
     }
+    
     stroke(100);
     strokeWeight(0);
     rect(x, y, w, h);
@@ -92,9 +46,40 @@ class Overview {
     text(txt, x+w/2, y+h/2+txtSize/2-txtSize/4);
     popStyle();
   }
+  
+  void displayThePitch() {
+    //The Pitch
+    fill(0, 232, 147);
+    rect(260, 220, 480, 270);
+
+    //The line markings on the pitch
+    fill(whiteColor);
+    rect(498, 220, 4, 270);
+    noFill();
+    stroke(whiteColor);
+    strokeWeight(3);
+    ellipse(500, 360, 60, 60);
+  }
+
+void header1 (int x, int y) {
+  fill(32, 35, 70);
+  textSize(26);
+  text("THE GROUNDHOPPING GROUND", x, y, 260, 400);
+
+  textSize(14);
+  text("Welcome to our new stadium The Groundhopping Ground. Tickets for next match is on sale now - select a stand and click on it.", x, 180, 260, 400);
+  textAlign(CENTER);
+
+  textSize(26);
+  text("← Buy tickets", x, 360, 260, 400);
+  fill(hoverColor);
+}
+
+
+ 
 
   //Check if the mouse is on the button
-  boolean mouseOver()
+  boolean mouseOverStand()
   {
     return (mouseX >= x && mouseX <= (x + w) && mouseY >= y && mouseY <= (y + h));
   }
