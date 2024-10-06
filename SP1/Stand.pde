@@ -19,8 +19,6 @@ class Stand
     txt = _txt;
   }
 
-
-
   //Display the button
   void displayButton()
   {
@@ -35,14 +33,14 @@ class Stand
     }
 
     noStroke();
-     strokeWeight(0);
+    strokeWeight(0);
     rect(x, y, w, h);
     fill(32, 35, 70);
     textSize(txtSize);
     textAlign(CENTER);
     text(txt, x+w/2, y+h/2+txtSize/2-txtSize/4);
-     noStroke();
-  
+    noStroke();
+
     popStyle();
   }
 
@@ -91,7 +89,7 @@ class Stand
 
     // Labels on sides
     fill(colorOne);
-     textSize(txtSize);
+    textSize(txtSize);
     for ( int i = 0; i < 14; i++ ) {
       char c = char(int('A') + i);
       // Letters.
@@ -103,29 +101,6 @@ class Stand
       text( "" + t, 68 + 40 * i, 695);
     }
   }
-
-  /*
-  void displayStands()
-   {
-   pushStyle();
-   if (mouseOver()) {
-   cursor(HAND);
-   fill(hoverButton);
-   
-   } else {
-   cursor(ARROW);
-   fill(c);
-   
-   }
-   stroke(100);
-   strokeWeight(0);
-   rect(x, y, w, h);
-   fill(32, 35, 70);
-   textSize(txtSize);
-   textAlign(CENTER);
-   text(txt, x+w/2, y+h/2+txtSize/2-txtSize/4);
-   popStyle();
-   }*/
 
   void header2 (int x, int y) {
     fill(32, 35, 70);

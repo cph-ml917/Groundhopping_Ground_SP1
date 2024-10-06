@@ -1,14 +1,13 @@
 PFont font;
 
-Stand button1;
-Overview northStand, eastStand, southStand, westStand, pitch;
-
 int buttonStatus = 1;
 color colorOne = color(32, 35, 70);
 color seatColor = color(196);
 color hoverColor = color(77, 91, 255);
-color whiteColor = color(255,255,255);
+color whiteColor = color(255, 255, 255);
 
+Overview northStand, eastStand, southStand, westStand, pitch;
+Stand button1;
 
 void setup () {
   size(1280, 720);
@@ -67,7 +66,6 @@ void draw() {
   noStroke();
   fill(0, 40);
   rect(1000, 0, 280, 720);
-  //header1(1010, 50);
 }
 
 
@@ -80,7 +78,7 @@ void mousePressed()
     {
       println("You have selected a stand");
       buttonStatus = 2;
-       cursor(ARROW);
+      cursor(ARROW);
       // cursor(ARROW);
       return;
     }

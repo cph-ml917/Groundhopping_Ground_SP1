@@ -18,25 +18,17 @@ class Overview {
     txt = _txt;
   }
 
- void displayStands()
+  void displayStands()
   {
-
-    //pushStyle();
-    /*if (mouseOverStand()) {
-      cursor(HAND);
-    } else {
-      cursor(ARROW);
-    }*/
-
-   pushStyle();
-      if (mouseOverStand()) {
+    pushStyle();
+    if (mouseOverStand()) {
       //cursor(HAND);
       fill(hoverButton);
     } else {
       //cursor(ARROW);
       fill(c);
     }
-    
+
     stroke(100);
     strokeWeight(0);
     rect(x, y, w, h);
@@ -46,7 +38,7 @@ class Overview {
     text(txt, x+w/2, y+h/2+txtSize/2-txtSize/4);
     popStyle();
   }
-  
+
   void displayThePitch() {
     //The Pitch
     fill(0, 232, 147);
@@ -61,22 +53,22 @@ class Overview {
     ellipse(500, 360, 60, 60);
   }
 
-void header1 (int x, int y) {
-  fill(32, 35, 70);
-  textSize(26);
-  text("THE GROUNDHOPPING GROUND", x, y, 260, 400);
+  void header1 (int x, int y) {
+    fill(32, 35, 70);
+    textSize(26);
+    text("THE GROUNDHOPPING GROUND", x, y, 260, 400);
 
-  textSize(14);
-  text("Welcome to our new stadium The Groundhopping Ground. Tickets for next match is on sale now - select a stand and click on it.", x, 180, 260, 400);
-  textAlign(CENTER);
+    textSize(14);
+    text("Welcome to our new stadium The Groundhopping Ground. Tickets for next match is on sale now - select a stand and click on it.", x, 180, 260, 400);
+    textAlign(CENTER);
 
-  textSize(26);
-  text("← Buy tickets", x, 360, 260, 400);
-  fill(hoverColor);
-}
+    textSize(26);
+    text("← Buy tickets", x, 360, 260, 400);
+    fill(hoverColor);
+  }
 
 
- 
+
 
   //Check if the mouse is on the button
   boolean mouseOverStand()
